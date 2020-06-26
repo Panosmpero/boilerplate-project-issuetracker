@@ -47,7 +47,6 @@
           {
             var issues= [];
             data.forEach(function(ele) {
-              console.log(ele);
               var openstatus;
               (ele.open) ? openstatus = 'open' : openstatus = 'closed';
               var single = [
@@ -87,7 +86,7 @@
             type: "PUT",
             url: url,
             data: {_id: $(this).attr('id'), open: false},
-            success: function(data) { alert(data); window.location.reload(true); }
+            success: function(data) { alert(data.message); window.location.reload(true); }
           });
           e.preventDefault();
         });
